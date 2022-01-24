@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { ExportAsConfig, ExportAsService, SupportedExtensions } from 'projects/ngx-export-as/src/public_api';
+import { ExportAsConfig, ExportAsService, SupportedExtensions } from 'ngx-export-as';
 
 @Component({
   selector: 'app-root',

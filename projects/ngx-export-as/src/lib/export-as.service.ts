@@ -5,7 +5,7 @@ import { ExportAsConfig } from './export-as-config.model';
 
 import html2canvas from 'html2canvas';
 import * as XLSX from 'xlsx';
-import HTMLtoDOCX from 'html-to-docx';
+// import HTMLtoDOCX from 'html-to-docx';
 import html2pdf from 'html2pdf.js';
 window['html2canvas'] = html2canvas;
 
@@ -246,21 +246,21 @@ export class ExportAsService {
     return new Observable((observer) => {
       const contentDocument: string = document.getElementById(config.elementIdOrContent).outerHTML;
       const content = '<!DOCTYPE html>' + contentDocument;
-      HTMLtoDOCX(content, null, config.options).then(converted => {
-        if (config.download) {
-          this.downloadFromBlob(converted, config.fileName);
-          observer.next();
-          observer.complete();
-        } else {
-          const reader = new FileReader();
-          reader.onloadend = () => {
-            const base64data = reader.result as string;
-            observer.next(base64data);
-            observer.complete();
-          };
-          reader.readAsDataURL(converted);
-        }
-      });
+      // HTMLtoDOCX(content, null, config.options).then(converted => {
+      //   if (config.download) {
+      //     this.downloadFromBlob(converted, config.fileName);
+      //     observer.next();
+      //     observer.complete();
+      //   } else {
+      //     const reader = new FileReader();
+      //     reader.onloadend = () => {
+      //       const base64data = reader.result as string;
+      //       observer.next(base64data);
+      //       observer.complete();
+      //     };
+      //     reader.readAsDataURL(converted);
+      //   }
+      // });
     });
   }
 
