@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ExportAsService, ExportAsConfig, SupportedExtensions } from 'ngx-export-as';
+import { Component, Inject } from '@angular/core';
+import { ExportAsConfig, ExportAsService, SupportedExtensions } from 'projects/ngx-export-as/src/public_api';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +21,7 @@ export class AppComponent {
   };
 
   constructor(
-    private exportAsService: ExportAsService
+     private exportAsService: ExportAsService
   ) { }
 
   exportAsString(type: SupportedExtensions, opt?: string) {
